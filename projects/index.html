@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomeGuy's Projects</title>
+      <meta content="someguy.exe" property="og:title">
+    <meta content="Hello, Welcome To My Site You Can Find My Projects, Download Center, What I Do, My Videos And Much More!" property="og:description">
+    <meta content="sometech.org" property="og:url">
+    <meta content="images/Untitl21ed.png" property="og:image">
+    <meta name="description" content="Hello, Welcome To My Site You Can Find My Projects, Download Center, What I Do, My Videos And Much More!" property">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.imgur.com/Q31KIGk.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .project-card p {
+            color: #ccc;
+        }
+
+        .project-card a {
+            display: inline-block;
+            background-color: rgba(0, 123, 255, 0.7);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: rgba(0, 123, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>SunPad</h3>
+            <p>A notepad alternative with better design and extra sticky notes.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="project-card">
+            <h3>Venus OS</h3>
+            <p>A Linux distro based off Arch.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="project-card">
+            <h3>Minesweeper</h3>
+            <p>My Minesweeper game.</p>
+            <a href="#">Learn More</a>
+        </div>
+    </div>
+</body>
+</html>
