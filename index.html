@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomeGuy's Site</title>
+    <meta name="description" content="Welcome to SomeGuy's site, where I share my passion for knowledge through engaging videos.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-image: url('https://i.imgur.com/Q31KIGk.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid white;
+            z-index: 10;
+        }
+        h1 {
+            color: white;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #ccc;
+        }
+        main {
+            display: flex;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .video-sidebar {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 500px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .video-sidebar h3 {
+            color: white;
+            margin-top: 0;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .about-me {
+            flex: 2;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .about-me h2 {
+            color: white;
+        }
+        .about-me p {
+            color: white;
+        }
+        .subscribe-button {
+            display: flex;
+            align-items: center;
+            background-color: red; /* YouTube red */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .subscribe-button:hover {
+            background-color: darkred;
+        }
+        .subscribe-button i {
+            margin-right: 5px;
+        }
+        @media (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+            .video-sidebar, .about-me {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>SomeGuy's Website</h1>
+    <nav>
+        <a href="downloads\index.html"><i class="fas fa-laptop-code"></i> Software</a>
+        <a href="projects\index.html"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="PC Specs\index.html"><i class="fas fa-desktop"></i>PC Specs</a>
+        <button onclick="window.location.href='https://www.youtube.com/@SomeGuy0467';" class="subscribe-button">
+    <i class="fab fa-youtube"></i> Subscribe
+</button>
+    </nav>
+</header>
+
+<main>
+    <div class="video-sidebar">
+        <h3>Videos</h3>
+        <div id="sidebar-videos"></div>
+    </div>
+    <div class="about-me">
+        <section>
+            <h2>About Me</h2>
+            <p>Hello, I am SomeGuy, a tech enthusiast and YouTuber passionate about sharing knowledge through engaging videos. I love tech, gaming, and making with new friends i have a channel with 60 subscribers.</p>
+        </section>
+    </div>
+</main>
+
+<script>
+    const videoIDs = [
+      "3PeFFiOwUeY", "ixpC92UeW9U", "jCnIr-dV6S8", "tiDY5vn2FVQ", "LxVnubFAqC4",
+      "MmwygTd5BKY", "rUf0VfvYfns", "IRtKd-LqsXE", "vcja-vAhCWQ", "zJhwEwOzMeE",
+      "nmdnCoKlDC0", "dXAJxH4FaqE", "O04a1wwqpck", "zdFJBfG-HfU", "uqcs53kbgak",
+      "hiRCfVzVc_0", "SPaTCPkvdpk", "LNZeih7Mi50", "e_TpVHzIDtI", "KZJuordU2Ck",
+      "1_yVcDk0db4", "Rw79Do6uhY4", "rETVOKP4Z_A", "6hr87wiQ3FU", "j1i1piDSgso",
+      "dIqAhzFWheE", "0i6xVHAWxh8", "R7KGFFqY7BE", "4zV-P_MP_s4", "Un533V6z4vw",
+      "QSRN9OfbwQs", "QSRN9OfbwQs", "9h4Xv1uvqfQ", "EKkvMSskFec", "Uj8JgSrJbNY"
+    ];
+
+    const sidebarVideos = document.getElementById('sidebar-videos');
+
+    videoIDs.forEach((videoId) => {
+      const videoContainer = document.createElement('div');
+      videoContainer.classList.add('video-container');
+      videoContainer.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+      `;
+      sidebarVideos.appendChild(videoContainer);
+    });
+</script>
+
+</body>
+</html>
