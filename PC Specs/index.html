@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SomeGuy's Download Center</title>    <meta content="someguy.exe" property="og:title">
+    <meta content="Hello, Welcome To My Site You Can Find My Projects, Download Center, What I Do, My Videos And Much More!" property="og:description">
+    <meta content="sometech.org" property="og:url">
+    <meta content="images/Untitl21ed.png" property="og:image">
+    <meta name="description" content="Hello, Welcome To My Site You Can Find My Projects, Download Center, What I Do, My Videos And Much More!" property">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('https://wparena.com/wp-content/uploads/2009/09/img0.jpg') no-repeat center center fixed;
+            background-size: cover; /* Make the wallpaper bigger */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Darker text color for contrast */
+        }
+
+        .top-bar {
+            background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+            border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphic effect */
+            box-shadow: 20px 20px 60px rgba(163, 163, 163, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+
+        .top-bar h1 {
+            font-size: 1.5em; /* Smaller font size */
+            margin: 0;
+            color: #444; /* Darker color for title */
+            flex-grow: 1; /* Allow title to take more space */
+            text-align: left; /* Align title to the left */
+        }
+
+        .top-bar a,
+        .top-bar button {
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-left: 10px; /* Space between buttons */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline for links */
+            color: #333; /* Text color */
+            box-shadow: 5px 5px 15px rgba(163, 163, 163, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s;
+        }
+
+        .top-bar a:hover,
+        .top-bar button:hover {
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 10px rgba(163, 163, 163, 0.5), -2px -2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .content {
+            background: rgba(249, 249, 249, 0.8); /* Transparent light background for content area */
+            border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphic effect */
+            box-shadow: 10px 10px 30px rgba(163, 163, 163, 0.5), -10px -10px 30px rgba(255, 255, 255, 0.5);
+            margin: 20px auto; /* Center content */
+            padding: 20px;
+            text-align: center;
+            max-width: 800px; /* Set max width for centering */
+        }
+
+        .about-me {
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white for glass effect */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphic effect */
+            padding: 20px;
+            text-align: left;
+            margin-top: 20px; /* Add some margin above the button */
+        }
+
+        .about-me h2 {
+            margin-top: 0;
+            color: #444; /* Dark color for headings */
+        }
+
+        .about-me img {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Maintain aspect ratio */
+            border-radius: 50%; /* Make it circular */
+            margin-right: 15px; /* Space between image and text */
+            float: left; /* Align image to the left */
+        }
+
+        .about-me p {
+            line-height: 1.5;
+        }
+
+        .center-button {
+            display: block;
+            margin: 20px auto; /* Center the About Me button */
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 5px 5px 15px rgba(163, 163, 163, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s;
+        }
+
+        .center-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 10px rgba(163, 163, 163, 0.5), -2px -2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .pc-specs {
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white for PC specs box */
+            border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphic effect */
+            padding: 20px;
+            margin-top: 20px; /* Space above the PC specs box */
+            text-align: left; /* Align text to the left */
+        }
+
+        .pc-specs h3 {
+            margin-top: 0; /* Remove margin from top */
+            color: #444; /* Dark color for headings */
+        }
+
+        .youtube-videos {
+            background: rgba(249, 249, 249, 0.5);
+            border: 1px solid rgba(204, 204, 204, 0.5);
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphic effect */
+            box-shadow: 10px 10px 30px rgba(163, 163, 163, 0.5), -10px -10px 30px rgba(255, 255, 255, 0.5);
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .youtube-videos h2 {
+            margin-top: 0;
+            color: #444;
+        }
+
+        .youtube-videos iframe {
+            width: 100%;
+            max-width: 560px; /* Standard YouTube video width */
+            height: 315px; /* Standard YouTube video height */
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(163, 163, 163, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.5);
+            margin: 10px 0; /* Space between videos */
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .about-me img {
+                width: 80px; /* Adjust size for smaller screens */
+                height: 80px; /* Maintain aspect ratio */
+            }
+
+            .youtube-videos iframe {
+                height: 200px; /* Adjust height for smaller screens */
+            }
+        }
+    </style>
+</head>
+
+
+
+    <div class="content pc-specs">
+        <h3>PC Specs</h3>
+        <p><strong>Processor:</strong> Intel Core i7-11th Gen</p>
+        <p><strong>Memory:</strong> 32GB RAM</p>
+        <p><strong>Graphics Card:</strong> NVIDIA RTX 3090</p>
+        <p><strong>Operating System:</strong> Windows 7</p>
+        <p><strong>Power Supply:</strong> 1000+ Watts Corsair PSU</p>
+        <p><strong>Storage:</strong> 512GB NVME SSD Boot Drive, 2TB Dell HDD Soon --> 4TB</p>
+        <p><strong>Motherboard:</strong> AC Y1 Gigabyte B560</p>
+        <h1>Lenovo T410</h1>
+        <p><strong>Processor:</strong> Intel Core i5-620M</p>
+        <p><strong>Memory:</strong> 8 GB RAM </p>
+        <p><strong>Graphics Card:</strong> Intel UHD Graphics</p>
+        <p><strong>Operating System:</strong> Windows 7 Professional + Vista Ultimate SP2 + XP Pro SP3</p>
+        <p><strong>Storage:</strong> 960GB SSD</p>
+        <p><strong>Motherboard:</strong> T410 75Y4066</p>
+        <h1>HP Pavilion DV6</h1>
+        <p><strong>Processor:</strong> Intel Core Duo T6500 @ 2.10GHz</p>
+        <p><strong>Memory:</strong> 4 GB RAM </p>
+        <p><strong>Graphics Card:</strong> Intel UHD Graphics</p>
+        <p><strong>Operating System:</strong> Windows Vista & Windows 10 (Both 64 Bits)</p>
+        <p><strong>Storage:</strong> 320 GB HDD</p>
+        <p><strong>Motherboard:</strong> HP Pavilion DV6-1230US</p>
+        <h1>Dell Optiplex 7010</h1>
+        <p><strong>Processor:</strong> Intel Core i5-3rd Gen</p>
+        <p><strong>Memory:</strong> 16GB RAM</p>
+        <p><strong>Graphics Card:</strong> Intel UHD Graphics 4000</p>
+        <p><strong>Operating System:</strong> Windows 7</p>
+        <p><strong>Power Supply:</strong> 250 WATTS</p>
+        <p><strong>Storage:</strong> 1TB SSD</p>
+        <p><strong>Motherboard:</strong> Dell Optiplex 7010 MOBO</p>
+        <p>There Are More (But I just choose these 4).</p>
+    </div>
